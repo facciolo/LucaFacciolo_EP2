@@ -1,4 +1,5 @@
-import turtle               # Usa a biblioteca de turtle graphics
+import turtle
+import time               # Usa a biblioteca de turtle graphics
 window = turtle.Screen()    # cria uma janela
 window.bgcolor("Black")
 window.title("Forca")
@@ -49,6 +50,33 @@ def perna_direita():
     tartaruga.pendown()
     tartaruga.rt(110)
     tartaruga.forward(50)
+def escrever_digitadas(a):
+    listadigitadas = []
+    listadigitadas.append(a)
+    tartaruga.penup()
+    tartaruga.setpos(100,-200)
+    tartaruga.pendown()
+    tartaruga.write(listadigitadas,font = ("arial",15,"normal"))
+def escrever_textocomtitulo(titulo,conteudo):
+    tartaruga.penup()
+    tartaruga.setpos(0,-100)
+    tartaruga.pendown()
+    tartaruga.write(titulo,font = ("arial",20,"normal"))
+    tartaruga.penup()
+    tartaruga.setpos(0,-80)
+    tartaruga.write(conteudo,font = ("arial",15,"normal"))
+def escrever_textos(a):
+    tartaruga.penup()
+    tartaruga.setpos(75,-100)
+    tartaruga.write(a,font = ("arial",15,"normal"))
+    tartaruga.clear()
+def escrever_textostemporal(a):
+    tartaruga.penup()
+    tartaruga.setpos(0,-100)
+    tartaruga.write(a,font = ("arial",15,"normal"))
+    time.sleep(3)
+    tartaruga.clear()
+    
     
     
 
@@ -70,4 +98,7 @@ braço_esquerdo()
 braço_direito()
 perna_esquerda()
 perna_direita()
+escrever_digitadas("a")
+escrever_digitadas("d")
+
 window.exitonclick()
