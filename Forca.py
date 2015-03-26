@@ -5,10 +5,13 @@ erros = 0
 lista1 = []
 lista = open("entrada.txt","r+",encoding = "utf-8")
 leitura = lista.readlines()
-palavra = random.choice(leitura).lower()#comando para tirar acento
+palavra = random.choice(leitura).lower()# + comando para tirar acento
+for i in palavra:
+    lista1.append(i)
+print(lista1)
 a = ''
 print(palavra)#teste
-while (erros < 6 or acertos != palavra):
+while (erros < 6 or acertos != lista1):
     a = input("digite uma letra: ").lower()
     if a in palavra and len(a)==1:
             if a in digitadas:
@@ -31,19 +34,19 @@ while (erros < 6 or acertos != palavra):
     else:
             print("Bugou , tente novamente")
             
-                """1-if erros == 1:
+                #"""1-if erros == 1:
                                 #desenhar cabeça
-                    if erros == 2:
+                    #if erros == 2:
                                 #desenhar tronco
-                    erros == 3:
+                    #erros == 3:
                                 #desenhar braço esquerdo
-                    erros == 4:
+                    #erros == 4:
                                 #desenhar braço direito
-                    erros == 5:
+                    #erros == 5:
                                 #desenhar perna esquerda
-                    erros == 6:
+                    #erros == 6:
                                 #desenhar perna direita
-                                print("voce perdeu")"""
+                                #print("voce perdeu")"""
 
 
 
