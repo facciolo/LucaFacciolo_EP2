@@ -1,7 +1,6 @@
 from random import choice
 import turtle    
 from time import sleep
-import unicodedata
 #Listas
 digitadas = []
 acertos = []
@@ -10,11 +9,10 @@ lista1 = []
 #Escolhendo a palavra 
 lista = open("entrada.txt","r+",encoding = "utf-8")
 leitura = lista.readlines()
-if leitura != "":
-    palavra = choice(leitura).lower().strip()# + comando para tirar acento
+palavra = choice(leitura).lower().strip()# + comando para tirar acento
 a = ''
 for i in palavra:
-    if i not in lista1 and i != " ":
+    if i not in lista1 and i != " ":        
         lista1.append(i)
         lista1.sort()
 #Cursores da interface
@@ -69,31 +67,31 @@ def tronco(erros):
         tartaruga.pendown()
         tartaruga.rt(90)
         tartaruga.circle(20)    
-    if erros == 2:#tronco
+    elif erros == 2:#tronco
         tartaruga.penup()
         tartaruga.setpos(250,160)
         tartaruga.pendown()
         tartaruga.rt(270)
         tartaruga.forward(65)    
-    if erros == 3:#braço esquerdo
+    elif erros == 3:#braço esquerdo
         tartaruga.penup()
         tartaruga.setpos(250,140)
         tartaruga.pendown()
         tartaruga.rt(260)
         tartaruga.forward(30)    
-    if erros == 4:#braço direito
+    elif erros == 4:#braço direito
         tartaruga.penup()
         tartaruga.setpos(250,140)
         tartaruga.pendown()
         tartaruga.rt(230)
         tartaruga.forward(30)    
-    if erros == 5:#perna esquerda
+    elif erros == 5:#perna esquerda
         tartaruga.penup()
         tartaruga.setpos(250,95)
         tartaruga.pendown()
         tartaruga.rt(170)
         tartaruga.forward(50)
-    if erros == 6:#perna direita
+    elif erros == 6:#perna direita
         tartaruga.penup()
         tartaruga.setpos(250,95)
         tartaruga.pendown()
@@ -113,7 +111,7 @@ def escrever_textos(b):
 def escrever_digitadas():
     digitadas.append(a)
     tartaruga3.penup()
-    tartaruga3.setpos(-60,-200)
+    tartaruga3.setpos(-80,-200)
     tartaruga3.pendown()
     tartaruga3.write(digitadas,font = ("arial",15,"normal"))
     sleep(1.5)
@@ -140,7 +138,7 @@ for i in range(2):
 for i in palavra:
     if i != " ":
         tartaruga4.forward(20)
-    if i == " ":
+    elif i == " ":
         tartaruga4.penup()
         tartaruga4.forward(20)
         tartaruga4.pendown()
@@ -148,12 +146,12 @@ for i in palavra:
     tartaruga4.forward(5)
     tartaruga4.pendown()
     
-escrever_textocomtitulo2(palavra,lista1)
+#escrever_textocomtitulo2(palavra,lista1)
 while (erros != 6 and acertos != lista1):
     a = window.textinput("","digite uma letra ou a palavra misteriosa").lower()
     if a == palavra:
         break
-    if a != " " and a in lista1 and len(a)==1 :
+    elif a != " " and a in lista1 and len(a)==1 :
                 if a in digitadas:
                     escrever_textostemporal("Voce ja digitou essa letra!")
                 else:
